@@ -10,7 +10,8 @@ from django.views.decorators.http import require_POST
 
 def index(request):
     todo_items = Todolist.objects.order_by('id') # create variable to retrive data from DB and order them by id
-    context = {'todo_items' : todo_items} # it's a dictionary and returns todo_items variable
+    form = TodoListForm()
+    context = {'todo_items' : todo_items, 'form' : form} # it's a dictionary and returns todo_items variable
     return render(request, 'todolist\index.html', context)#this will pass the information to the template.
 
 @require_POST
