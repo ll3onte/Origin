@@ -18,7 +18,7 @@ def addTodoItem(request):
     form = TodoListForm(request.POST)
 
     if form.is_valid():
-        new_todo = Todolist(text=request.POST['text'])
+        new_todo = Todolist(text=request.POST['text']) 
         new_todo.save()
     
 
